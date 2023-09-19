@@ -38,7 +38,6 @@ img {
 }
 
 .right p {
-  font-size: 16px;
   color: #555;
 }
 
@@ -62,7 +61,7 @@ img {
   margin-left: 1rem;
 }
 .title {
-  font-weight: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 .time {

@@ -24,6 +24,7 @@ const InfiniteScrollView = () => {
       setPage(page + 1);
     } catch (error) {
       console.error("Error fetching articles:", error);
+      setHasMore(false);
     } finally {
       setLoading(false);
     }
