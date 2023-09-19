@@ -6,7 +6,7 @@ const InfiniteScrollView = () => {
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
 
-    const API_URL = "https://englishapi.pinkvilla.com/app-api/v1/photo-gallery-feed-page/page";
+    const API_URL = "app-api/v1/photo-gallery-feed-page/page";
     const fetchData = async () => {
         try {
           setLoading(true);
