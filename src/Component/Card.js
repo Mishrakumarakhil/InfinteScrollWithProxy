@@ -52,7 +52,7 @@ const Card = ({ data, loading }) => {
           </div>
         ))}
       </div>
-      {loading && <p>Loading...</p>}
+      {loading && <div className="loader"> Fetching More data...</div>}
     </>
   );
 };
