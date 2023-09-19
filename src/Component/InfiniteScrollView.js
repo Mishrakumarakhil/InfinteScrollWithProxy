@@ -28,9 +28,9 @@ const InfiniteScrollView = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <Card data={data} loading={loading} />
-    </div>
+    </>
   );
 };
 export default InfiniteScrollView;
