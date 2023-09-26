@@ -3,11 +3,27 @@ import axios from "axios";
 import Card from "./Card";
 
 const API_URL = "app-api/v1/photo-gallery-feed-page/page";
-const InfiniteScrollView = () => {
+const InfiniteScrollView = ({ searchText }) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+  const [filteredData, setFilteredData] = useState([]);
+
+  const filterDataByTitle = (searchText) => {
+    const filteredItems = data.filter((item) => {
+      if (searchText && item.node) {
+        return item.node.title.toLowerCase().includes(searchText.toLowerCase());
+      } else {
+        return true;
+      }
+    });
+    setFilteredData(filteredItems);
+  };
+
+  useEffect(() => {
+    filterDataByTitle(searchText);
+  }, [searchText, data]);
 
   const fetchArticles = async () => {
     try {
@@ -54,7 +70,7 @@ const InfiniteScrollView = () => {
 
   return (
     <>
-      <Card data={data} loading={loading} />
+      <Card data={filteredData} loading={loading} />
     </>
   );
 };
