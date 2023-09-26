@@ -75,3 +75,4 @@ const InfiniteScrollView = ({ searchText }) => {
   );
 };
 export default InfiniteScrollView;
+
